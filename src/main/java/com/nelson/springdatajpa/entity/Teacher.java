@@ -28,8 +28,9 @@ public class Teacher {
 
     private String lastName;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    //NOT RECOMMENDED TO USE ONE-TO-ONE....GO FOR MANY-TO-ONE WHENEVER POSSIBLE
+    /*@OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "teacher_id", referencedColumnName = "teacherId")
-    private List<Course> courses;
+    private List<Course> courses;*/
 
 }

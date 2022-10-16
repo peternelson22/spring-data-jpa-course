@@ -24,16 +24,16 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     String getStudentFirstNameByEmail(String email);
 
     //SQL - Native Query
-    @Query(value = "select * from tbl_student s where s.email = ?1", nativeQuery = true)
+    @Query(value = "select * from student s where s.email = ?1", nativeQuery = true)
     Student getStudentByEmail(String email);
 
     //SQL - Native Query, Named Param
-    @Query(value = "select * from tbl_student s where s.email = :email", nativeQuery = true)
+    @Query(value = "select * from student s where s.email = :email", nativeQuery = true)
     Student getStudentByEmailParam(@Param("email") String email);
 
 
     @Modifying  /*   Added when updating or deleting a record*/
     @Transactional
-    @Query(value = "update tbl_student set first_name = ?1 where email = ?2", nativeQuery = true)
+    @Query(value = "update student set first_name = ?1 where email = ?2", nativeQuery = true)
     int updateStudentNameByEmail(String firstName, String email);
 }

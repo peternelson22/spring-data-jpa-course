@@ -13,14 +13,13 @@ import javax.persistence.*;
 @Builder
 @Entity
 @Table(
-        name = "tbl_student",
         uniqueConstraints = @UniqueConstraint(name = "email", columnNames = "email"))
 public class Student {
 
     @Id
     @SequenceGenerator(
             name = "student_sequence",
-            sequenceName = "student_sequence",
+            sequenceName = "student_seq",
             allocationSize = 1
     )
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "student_sequence")
